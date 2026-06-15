@@ -1,11 +1,13 @@
 import { Client } from "@stomp/stompjs";
 
+const RAILWAY_DOMAIN = "board-score-production.up.railway.app";
+
 export function connectRoomSocket(
   roomCode,
   onMessage
 ) {
   const client = new Client({
-    brokerURL: "ws://192.168.1.143:8080/ws",
+    brokerURL: `wss://${RAILWAY_DOMAIN}/ws`,
     reconnectDelay: 5000,
     onConnect: () => {
       client.subscribe(
@@ -26,7 +28,7 @@ export function connectRankingSocket(
   onMessage
 ) {
   const client = new Client({
-    brokerURL: "ws://localhost:8080/ws",
+    brokerURL: `wss://${RAILWAY_DOMAIN}/ws`,
     reconnectDelay: 5000,
     onConnect: () => {
       client.subscribe(

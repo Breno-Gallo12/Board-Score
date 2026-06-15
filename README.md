@@ -50,6 +50,6 @@ O **BoardScore** é uma aplicação web multiplayer em tempo real desenhada para
 ### 1. Iniciar o Backend (Spring Boot)
 Navegue até à pasta do backend e execute a aplicação (via Maven ou Gradle):
 ```bash
-cd boardscore-api
+cd boardscore
 ./mvnw spring-boot:run
 # O servidor iniciará na porta 8080 (http://localhost:8080)
