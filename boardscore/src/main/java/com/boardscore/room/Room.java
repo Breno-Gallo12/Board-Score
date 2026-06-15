@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -15,6 +16,7 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     private String code;
+    private LocalDateTime lastActivity = LocalDateTime.now();
 
     @Enumerated(EnumType.STRING)
     private GameType gameType;
@@ -28,4 +30,9 @@ public class Room {
     private String hostPlayerId;
     private Integer targetScore;
     private String winnerPlayerId;
+
+    @PreUpdate
+    public void setLastActivity() {
+        this.lastActivity = LocalDateTime.now();
+    }
 }
