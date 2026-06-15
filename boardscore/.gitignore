@@ -1,0 +1,19 @@
+# Compilados e Build
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+
+# IDEs (Configurações locais)
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# Ficheiros do Sistema Operativo
+.DS_Store
+Thumbs.db
