@@ -80,10 +80,4 @@ public class RoomController {
     public Room finishScoring(@PathVariable String code) {
         return roomService.finishScoring(code);
     }
-
-    @DeleteMapping("/rooms/all")
-    public ResponseEntity<String> deleteAllRooms() {
-        roomService.deleteAllRooms();
-        return ResponseEntity.ok("Todas as salas foram limpas com sucesso.");
-    }
 }
